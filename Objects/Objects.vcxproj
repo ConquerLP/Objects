@@ -128,6 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="objects\abstract\interface\if_object.c" />
+    <ClCompile Include="objects\abstract\object.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="objects\abstract\object.h" />
+    <ClInclude Include="objects\abstract\interface\if_object.h" />
+    <ClInclude Include="objects\macro.h" />
+    <ClInclude Include="objects\stdlib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

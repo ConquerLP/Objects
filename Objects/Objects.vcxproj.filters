@@ -13,10 +13,45 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\wrapper">
+      <UniqueIdentifier>{5850d26d-258f-4fe3-84f8-99d055f619f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\util">
+      <UniqueIdentifier>{0bc7f19d-932c-4fd4-a461-c07662138d3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\gui">
+      <UniqueIdentifier>{5ef415cf-facc-4800-b574-e9452243ef03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\wrapper\number">
+      <UniqueIdentifier>{99e509f5-25d8-4a3b-b143-b768d493d49f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\interfaces">
+      <UniqueIdentifier>{47fae01c-0fa6-4db8-82e5-51fdcfdb6ef2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="objects\abstract\object.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="objects\abstract\interface\if_object.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="objects\macro.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="objects\abstract\interface\if_object.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="objects\stdlib.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="objects\abstract\object.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
