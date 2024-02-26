@@ -13,6 +13,9 @@ struct _IF_Object {
 	_uint (*hashCode)(void* o);
 };
 
-IF_Object* create_IF_Object();
+IF_Object* create_IF_Object(void* (*clone)(void* o),
+			bool (*equals)(void* o1, void* o2),
+			char* (*toString)(void* o),
+			_uint(*hashCode)(void* o));
 
 #endif // !IF_OBJECT_H

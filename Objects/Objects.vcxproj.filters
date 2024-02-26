@@ -53,5 +53,8 @@
     <ClInclude Include="objects\abstract\object.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="objects\util\if_list.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

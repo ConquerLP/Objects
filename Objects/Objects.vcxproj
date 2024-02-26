@@ -136,6 +136,7 @@
     <ClInclude Include="objects\abstract\interface\if_object.h" />
     <ClInclude Include="objects\macro.h" />
     <ClInclude Include="objects\stdlib.h" />
+    <ClInclude Include="objects\util\if_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

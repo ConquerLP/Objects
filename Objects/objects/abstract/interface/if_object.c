@@ -1,12 +1,15 @@
 #include "if_object.h"
 
-IF_Object* create_IF_Object()
+IF_Object* create_IF_Object(void* (*clone)(void* o),
+	bool (*equals)(void* o1, void* o2),
+	char* (*toString)(void* o),
+	_uint(*hashCode)(void* o))
 {
 	CREATE_STRUCT_HEAP(IF_Object, interface);
-	interface->clone = null;
-	interface->equals = null;
-	interface->toString = null;
-	interface->hashCode = null;
+	interface->clone = clone;
+	interface->equals = equals;
+	interface->toString = toString;
+	interface->hashCode = hashCode;
 	return interface;
 }
 
