@@ -39,6 +39,12 @@
     <ClCompile Include="objects\abstract\interface\if_object.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="objects\util\interface\if_list.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="objects\util\collections\array.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="objects\macro.h">
@@ -53,7 +59,10 @@
     <ClInclude Include="objects\abstract\object.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="objects\util\if_list.h">
+    <ClInclude Include="objects\util\interface\if_list.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="objects\util\collections\array.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

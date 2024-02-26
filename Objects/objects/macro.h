@@ -7,6 +7,12 @@
 #include <string.h>
 #include <stdint.h>
 
+enum types {
+	Object_t = 0, Array_t,
+	double_t,
+	types_END
+};
+
 typedef int8_t int8;
 typedef uint8_t uint8;
 typedef int16_t int16;
