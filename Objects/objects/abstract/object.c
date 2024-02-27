@@ -4,7 +4,6 @@ private void* clone(void* o);
 private bool equals(void* o1, void* o2);
 private char* toString(void* o);
 private _uint hashCode(void* o);
-private int32 instanceOf(void* o);
 
 Object* new_ObjectType(int32 type)
 {
@@ -16,8 +15,12 @@ Object* new_ObjectType(int32 type)
 Object* new_Object()
 {
 	CREATE_STRUCT_HEAP(Object, o);
-	o->meth = create_IF_Object(clone, equals, toString, hashCode, instanceOf);
+	o->clone = clone;
+	o->equals = equals;
+	o->toString = toString;
+	o->hashCode = hashCode;
 	o->type = Object_t;
+	o->magic_string = magic_string;
 	return o;
 }
 
@@ -43,7 +46,13 @@ private _uint hashCode(void* o)
 	return (_uint)o;
 }
 
-private int32 instanceOf(void* o)
+int32 instanceOf(void* o)
 {
 	return (*(Object**)o)->type;
+}
+
+Object* cast_object(void* o)
+{
+	if (strcmp(((Object*)o)->magic_string, magic_string) == 0) return o;
+	return cast_object((*(Object**)o));
 }
