@@ -25,8 +25,6 @@
 #define CAST(className, ptr) \
 	cast##className(ptr)
 
-
-
 MAGIC_STRING(Object);
 
 typedef struct _Object Object, * pObject;
