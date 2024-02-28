@@ -130,6 +130,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="objects\base\object.c" />
     <ClCompile Include="objects\util\collections\abstractCollection.c" />
+    <ClCompile Include="objects\util\collections\array.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="objects\base\object.h" />

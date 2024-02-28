@@ -4,7 +4,8 @@
 
 #include "..\macro.h"
 
-#define MAGIC char* magicString;
+#define MAGIC char* MAGIX
+#define MAGIX magicString
 #define SET_MAGIC(ptr, className) \
 	ptr->magicString = className##magicString
 	
@@ -13,8 +14,8 @@
 
 #define CAST_FN(className) \
 	CAST_FN_PROTO(className) { \
-	className* name = o; \
-	if (strcmp(name->magicString, className##magicString) == 0) return o; \
+	className* clazz = o; \
+	if (strcmp(clazz->magicString, className##magicString) == 0) return o; \
 	else return cast##className((*(className**)o)); \
 	} 
 
