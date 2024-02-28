@@ -7,12 +7,6 @@
 #include <string.h>
 #include <stdint.h>
 
-enum types {
-	Object_t = 0, Array_t,
-	double_t,
-	types_END
-};
-
 typedef int8_t int8;
 typedef uint8_t uint8;
 typedef int16_t int16;
@@ -51,7 +45,6 @@ static char MACRO_BUFFER2[MACRO_BUFFER_SIZE] = { 0 };
 #define STRINGYFY(c) #c
 #define ARRAY_SIZE(ptr) (sizeof((ptr)) / sizeof((*ptr)))
 
-//instance of()
 #define CREATE_STRUCT_HEAP(type, id) type* id; MALLOC(id, type, 1);
 
 #endif // !MACRO_H
