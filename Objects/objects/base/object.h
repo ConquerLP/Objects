@@ -31,5 +31,4 @@ Object* new_Object(char* className);
 CAST_FN_PROTO(Object);
 bool instanceOf(void* o, char* className);
 
-
 #endif // !OBJECT_H
