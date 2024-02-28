@@ -62,7 +62,5 @@ void valid_index(void* c, _int index)
 
 void valid_type(void* c, void* e)
 {
-	Object* o = cast_object(e);
-	Collection* cc = cast_collection(c);
-	if (instanceOf(e) != cast_collection(c)->type) ERROR__("Wrong type in collection.");
+	if (instanceOf(cast_object(e)) != cast_collection(c)->type) ERROR__("Wrong type in collection.");
 }

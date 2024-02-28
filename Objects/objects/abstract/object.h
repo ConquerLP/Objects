@@ -14,7 +14,7 @@ struct _Object {
 	void* (*clone)(void* o);
 	bool (*equals)(void* o1, void* o2);
 	char* (*toString)(void* o);
-	_uint(*hashCode)(void* o);
+	_uint (*hashCode)(void* o);
 };
 
 Object* new_Object();

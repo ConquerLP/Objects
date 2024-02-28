@@ -50,6 +50,10 @@ private void addCollectionIndex(void* list, void* c, _int index)
 
 private void clear(void* list)
 {
+	Array* a = list;
+	for (_int i = 0; i < a->c->size; ++i) {
+		a->e[i] = null;
+	}
 }
 
 private bool contains(void* list, void* e)
@@ -100,14 +104,20 @@ private bool isEmpty(void* list)
 
 private void removeE(void* list, void* e)
 {
+	_int index = indexOf(list, e);
+	if (index != -1) set(list, null, index);
 }
 
 private void removeIndex(void* list, _int index)
 {
+	set(list, null, index);
 }
 
 private void removeAll(void* list, void* c)
 {
+	Array* a = list;
+	Collection* col = cast_collection(c);
+
 }
 
 private void set(void* list, void* e, _int index)
