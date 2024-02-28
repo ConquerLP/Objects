@@ -136,6 +136,7 @@
     <ClInclude Include="objects\macro.h" />
     <ClInclude Include="objects\stdlib.h" />
     <ClInclude Include="objects\util\collections\abstractCollection.h" />
+    <ClInclude Include="objects\util\collections\array.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

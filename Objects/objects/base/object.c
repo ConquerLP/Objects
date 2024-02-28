@@ -10,7 +10,7 @@ private bool equals(void* o1, void* o2);
 Object* new_Object(char* className)
 {
 	CREATE_STRUCT_HEAP(Object, o);
-	o->magicString = Object_magicString;
+	SET_MAGIC(o, Object);
 	o->className = className;
 	o->hashcode = hashcode;
 	o->toString = toString;

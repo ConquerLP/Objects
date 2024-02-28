@@ -4,22 +4,34 @@
 
 #include "..\macro.h"
 
+#define MAGIC char* magicString;
+#define SET_MAGIC(ptr, className) \
+	ptr->magicString = className##magicString
+	
+#define MAGIC_STRING(className) \
+	static char* className##magicString = #className
+
 #define CAST_FN(className) \
 	CAST_FN_PROTO(className) { \
 	className* name = o; \
-	if (strcmp(name->magicString, className##_magicString) == 0) return o; \
+	if (strcmp(name->magicString, className##magicString) == 0) return o; \
 	else return cast##className((*(className**)o)); \
 	} 
 
 #define CAST_FN_PROTO(className) \
 	className* cast##className(void* o)
 
-static char* Object_magicString = "Object";
+#define CAST(className, ptr) \
+	cast##className(ptr)
+
+
+
+MAGIC_STRING(Object);
 
 typedef struct _Object Object, * pObject;
 
 struct _Object {
-	char* magicString;
+	MAGIC;
 	char* className;
 	_int (*hashcode)(void*);
 	char* (*toString)(void*);
