@@ -33,30 +33,12 @@
     <ClCompile Include="main.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="objects\abstract\object.c">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="objects\util\collections\array.c">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="objects\util\collections\collection.c">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="objects\macro.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="objects\stdlib.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="objects\abstract\object.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="objects\util\collections\array.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="objects\util\collections\collection.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
