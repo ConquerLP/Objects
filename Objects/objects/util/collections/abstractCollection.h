@@ -5,13 +5,13 @@
 #include "..\..\macro.h"
 #include "..\..\base\object.h"
 
-static char* AbstractCollection_magicString = "AbstractCollection";
+MAGIC_STRING(AbstractCollection);
 
 typedef struct _AbstractCollection AbstractCollection, * pAbstractCollection;
 
 struct _AbstractCollection {
 	Object* o;
-	char* magicString;
+	MAGIC;
 	_int size;
 	_int (*getSize)(void*);
 	void* (*get)(void*, _int);
