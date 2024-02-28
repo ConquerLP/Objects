@@ -21,22 +21,22 @@ Object* new_Object(char* className)
 
 private _int hashcode(void* o)
 {
-
+	return (_int)o;
 }
 
 private char* toString(void* o)
 {
-
+	return CAST(Object, o)->MAGIX;
 }
 
 private void* clone(void* o)
 {
-
+	return new_Object("Object");
 }
 
 private bool equals(void* o1, void* o2)
 {
-
+	return CAST(Object, o1)->hashcode == CAST(Object, o2)->hashcode;
 }
 
 bool instanceOf(void* o, char* className)

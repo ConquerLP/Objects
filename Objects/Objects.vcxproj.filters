@@ -39,6 +39,9 @@
     <ClCompile Include="objects\util\collections\abstractCollection.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="objects\util\collections\array.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="objects\macro.h">
