@@ -128,16 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClCompile Include="objects\abstract\object.c" />
-    <ClCompile Include="objects\util\collections\array.c" />
-    <ClCompile Include="objects\util\collections\collection.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="objects\abstract\object.h" />
     <ClInclude Include="objects\macro.h" />
     <ClInclude Include="objects\stdlib.h" />
-    <ClInclude Include="objects\util\collections\array.h" />
-    <ClInclude Include="objects\util\collections\collection.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
