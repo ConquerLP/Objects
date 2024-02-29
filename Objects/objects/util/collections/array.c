@@ -59,7 +59,7 @@ private _int lastIndexOf(void* a, void* e)
 
 private _int indexOfOffset(void* a, void* e, _int index)
 {
-	try_catch_block();
+	//try_catch_block();
 
 	check_type(a, e);
 	Array* array = a;
@@ -76,7 +76,7 @@ private bool try_check_index(va_list args)
 	return false;
 }
 
-private void catch_check_index(va_list args) 
+private void catch_check_index(va_list args)
 {
 
 }
