@@ -26,6 +26,6 @@ struct _AbstractCollection {
 
 AbstractCollection* new_AbstractCollection(char* type, _int size);
 CAST_FN_PROTO(AbstractCollection);
-check_type(void* c, void* e);
+void check_type(void* c, void* e);
 
 #endif // !ABSTRACTCOLLECTION_H

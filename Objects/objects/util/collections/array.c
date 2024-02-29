@@ -61,7 +61,6 @@ private _int indexOfOffset(void* a, void* e, _int index)
 {
 	try_catch_block();
 
-
 	check_type(a, e);
 	Array* array = a;
 	Object* o = null;
@@ -75,11 +74,6 @@ private _int indexOfOffset(void* a, void* e, _int index)
 private bool try_check_index(va_list args)
 {
 	return false;
-}
-
-private bool try_check_index(va_list arags) 
-{ 
-	return false; 
 }
 
 private void catch_check_index(va_list args) 
