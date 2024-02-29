@@ -9,8 +9,6 @@ private _int indexOf(void* a, void* e);
 private _int lastIndexOf(void* a, void* e);
 private _int indexOfOffset(void* a, void* e, _int index);
 
-private void check_index(void* a, _int index);
-
 Array* new_Array(char* type, _int size)
 {
 	CREATE_STRUCT_HEAP(Array, a);
@@ -31,7 +29,6 @@ Array* new_Array(char* type, _int size)
 
 private void set(void* a, void* e, _int index)
 {
-	check_index(a, index);
 	check_type(a, e);
 	Array* array = a;
 	array->e[index] = e;
@@ -39,16 +36,8 @@ private void set(void* a, void* e, _int index)
 
 private void* get(void* a, _int index)
 {
-	check_index(a, index);
 	Array* array = a;
 	return array->e[index];
-}
-
-private void check_index(void* a, _int index)
-{
-	Array* array = a;
-	if (index < 0 || index >= array->absCol->getSize(a))
-		ERROR__("Array index out of bounds.");
 }
 
 private _int indexOf(void* a, void* e)
@@ -67,11 +56,7 @@ private _int lastIndexOf(void* a, void* e)
 
 private _int indexOfOffset(void* a, void* e, _int index)
 {
-	try_catch_block(check_index, null, );
-
-
 	check_type(a, e);
-	check_index(a, index);
 	Array* array = a;
 	Object* o = null;
 	for (_int i = index; i < array->absCol->size; i++) {
