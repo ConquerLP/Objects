@@ -7,7 +7,7 @@ private _int getSize(void* c);
 AbstractCollection* new_AbstractCollection(char* type, _int size)
 {
 	CREATE_STRUCT_HEAP(AbstractCollection, a);
-	a->o = new_Object("AbstractCollection");
+	a->object = new_Object("AbstractCollection");
 	SET_MAGIC(a, AbstractCollection);
 	a->type = type;
 	a->size = size;

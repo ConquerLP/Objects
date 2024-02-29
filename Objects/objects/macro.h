@@ -15,7 +15,7 @@ typedef int32_t int32;
 typedef uint32_t uint32;
 typedef int64_t int64;
 typedef uint64_t uint64;
-typedef uint64_t _uint;
+typedef size_t _uint;
 typedef int64_t _int;
 
 #define true 1
@@ -28,8 +28,8 @@ typedef int64_t _int;
 static char MACRO_BUFFER1[MACRO_BUFFER_SIZE] = { 0 };
 static char MACRO_BUFFER2[MACRO_BUFFER_SIZE] = { 0 };
 
-#define MALLOC(ptr, type, amount) ptr = malloc(sizeof(type) * (amount)); if(!ptr) { fprintf(stderr, "Could not allocate memory. In File: \n%s\nIn Line: %i", __FILE__, __LINE__); exit(1);}
-#define REALLOC(ptr, type, amount) ptr = realloc(ptr, sizeof(type) * (amount)); if(!ptr) { fprintf(stderr, "Could not allocate memory. In File: \n%s\nIn Line: %i", __FILE__, __LINE__); exit(1); }
+#define MALLOC(ptr, type, amount) ptr = malloc(sizeof(type) * (size_t)(amount)); if(!ptr) { fprintf(stderr, "Could not allocate memory. In File: \n%s\nIn Line: %i", __FILE__, __LINE__); exit(1);}
+#define REALLOC(ptr, type, amount) ptr = realloc(ptr, sizeof(type) * (size_t)(amount)); if(!ptr) { fprintf(stderr, "Could not allocate memory. In File: \n%s\nIn Line: %i", __FILE__, __LINE__); exit(1); }
 
 #define COPY_STRING_HEAP(dest, src) MALLOC(dest, char, strlen(src) + 1); strcpy(dest, src);
 #define MERGE_STRING_HEAP(dest, src1, src2) MALLOC(dest, char, strlen(src1) + strlen(src2) + 1); strcpy(dest, src1); strcat(dest, src2);

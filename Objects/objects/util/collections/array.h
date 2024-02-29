@@ -10,7 +10,7 @@ MAGIC_STRING(Array);
 typedef struct _Array Array, * pArray;
 
 struct _Array {
-	AbstractCollection* a;
+	AbstractCollection* absCol;
 	MAGIC;
 	void** e;
 };

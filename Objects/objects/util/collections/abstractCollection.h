@@ -10,7 +10,7 @@ MAGIC_STRING(AbstractCollection);
 typedef struct _AbstractCollection AbstractCollection, * pAbstractCollection;
 
 struct _AbstractCollection {
-	Object* o;
+	Object* object;
 	MAGIC;
 	char* type;
 	_int size;
