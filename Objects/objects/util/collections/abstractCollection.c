@@ -14,6 +14,9 @@ AbstractCollection* new_AbstractCollection(char* type, _int size)
 	a->getSize = getSize;
 	a->set = null;
 	a->get = null;
+	a->indexOf = null;
+	a->lastIndexOf = null;
+	a->indexOfOffset = null;
 	return a;
 }
 
