@@ -9,9 +9,6 @@ private _int indexOf(void* a, void* e);
 private _int lastIndexOf(void* a, void* e);
 private _int indexOfOffset(void* a, void* e, _int index);
 
-private bool try_check_index(va_list args);
-private void catch_check_index(va_list args);
-
 Array* new_Array(char* type, _int size)
 {
 	CREATE_STRUCT_HEAP(Array, a);
