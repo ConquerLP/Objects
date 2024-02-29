@@ -1,9 +1,9 @@
 #include "exception.h"
 
-void try_catch_block(bool (*try_fun)(_int, ...), void (*catch_fun)(_int, ...),
-	_int argc1, va_list args1, _int argc2, va_list args2)
+void try_catch_block(bool (*try_fun)(va_list args), void (*catch_fun)(va_list args), ...)
 {
-	if (!try_fun(argc1, args1)) {
-		catch_fun(argc2, args2);
-	}
+	va_list args;
+	va_start(args, catch_fun);
+	if (!try_fun(args)) catch_fun(args);
+	va_end(args);
 }
