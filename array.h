@@ -2,8 +2,8 @@
 
 #define ARRAY_H
 
-#include "..\..\macro.h"
-#include "..\collections\abstractCollection.h"
+#include "macro.h"
+#include "abstractCollection.h"
 
 MAGIC_STRING(Array);
 

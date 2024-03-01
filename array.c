@@ -1,5 +1,5 @@
 #include "array.h"
-#include "..\..\base\exception.h"
+#include "exception.h"
 
 CAST_FN(Array)
 

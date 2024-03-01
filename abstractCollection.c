@@ -25,7 +25,7 @@ private _int getSize(void* c)
 	return CAST(AbstractCollection, c)->size;
 }
 
-check_type(void* c, void* e)
+void check_type(void* c, void* e)
 {
 	if (strcmp(CAST(AbstractCollection, c)->type, CAST(Object, e)->className) != 0) {
 		ERROR__("Tried to insert wrong class-type into a collection.");
