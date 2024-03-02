@@ -9,6 +9,9 @@ private _int indexOf(void* a, void* e);
 private _int lastIndexOf(void* a, void* e);
 private _int indexOfOffset(void* a, void* e, _int index);
 
+private bool try_index_check(va_list args);
+private void catch_index_check(va_list args);
+
 Array* new_Array(char* type, _int size)
 {
 	CREATE_STRUCT_HEAP(Array, a);
@@ -57,6 +60,7 @@ private _int lastIndexOf(void* a, void* e)
 private _int indexOfOffset(void* a, void* e, _int index)
 {
 	check_type(a, e);
+	try_catch_block(try_index_check, catch_index_check, a, index, index);
 	Array* array = a;
 	Object* o = null;
 	for (_int i = index; i < array->absCol->size; i++) {
@@ -66,3 +70,18 @@ private _int indexOfOffset(void* a, void* e, _int index)
 	return ABSTRACT_COLLECTION_INVALID_INDEX;
 }
 
+private bool try_index_check(va_list args)
+{
+	Array* a = va_arg(args, void*);
+	_int index = va_arg(args, _int);
+	if (index >= a->absCol->size || index < 0) return false;
+	else return true;
+}
+
+private void catch_index_check(va_list args)
+{
+	_int index = va_arg(args, _int);
+	if (index != ABSTRACT_COLLECTION_INVALID_INDEX) {
+		ERROR__("Array index out of bounds.");
+	}
+}

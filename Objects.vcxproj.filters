@@ -33,30 +33,30 @@
     <ClCompile Include="main.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="objects\base\object.c">
+    <ClCompile Include="object.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="objects\util\collections\abstractCollection.c">
+    <ClCompile Include="abstractCollection.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="objects\util\collections\array.c">
+    <ClCompile Include="array.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="objects\macro.h">
+    <ClInclude Include="macro.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="objects\stdlib.h">
+    <ClInclude Include="stdlib.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="objects\base\object.h">
+    <ClInclude Include="object.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="objects\util\collections\abstractCollection.h">
+    <ClInclude Include="abstractCollection.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="objects\util\collections\array.h">
+    <ClInclude Include="array.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
