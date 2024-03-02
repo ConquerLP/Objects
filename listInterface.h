@@ -14,7 +14,6 @@ struct _ListInterface {
 	void (*clear)(void*);
 	bool (*contains)(void*, void*);
 	bool (*containsAll)(void*, void*);
-
 };
 
 #endif // !LIST_INTERFACE_H
