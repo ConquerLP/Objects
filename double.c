@@ -1,10 +1,9 @@
 #include "double.h"
 
-Double* castDouble(void* o) {
-	Double* clazz = o; 
-	if (strcmp(clazz->magicString, DoublemagicString) == 0) return o; 
-	else return castDouble((*(Double**)o));
-}
+OBJECT_STRING_BUFFER_SETUP(Double);
+OBJECT_STATIC_TO_STRING_FUN(Double, double, %lf)
+
+CAST_FN(Double)
 
 private _int hashcode(void* o);
 private char* toString(void* o);
@@ -31,7 +30,7 @@ private _int hashcode(void* o)
 
 private char* toString(void* o)
 {
-	return "Double";
+	return OBJECT_STATIC_STRING_CALL(Double, CAST(Double, o)->value);
 }
 
 private void* clone(void* o)

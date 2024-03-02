@@ -25,6 +25,24 @@
 #define CAST(className, ptr) \
 	cast##className(ptr)
 
+#define OBJECT_BUFFER_LENGTH 20
+#define OBJECT_STRING_BUFFER_SETUP(className) static char className##buffer[OBJECT_BUFFER_LENGTH]
+#define OBJECT_STRING_BUFFER(className) className##buffer
+#define OBJECT_STRING_CLEAN(className) memset(className##buffer, 0, OBJECT_BUFFER_LENGTH)
+#define OBJECT_STATIC_TO_STRING_PROTO(className, type) \
+	char* static_##className##_toString(type value)
+
+#define OBJECT_STATIC_TO_STRING_FUN(className, type, specifier) \
+	char* static_##className##_toString(type value) { \
+	OBJECT_STRING_CLEAN(className); \
+	snprintf(OBJECT_STRING_BUFFER(className), OBJECT_BUFFER_LENGTH,  #specifier, value); \
+	return Doublebuffer; \
+	} \
+
+#define OBJECT_STATIC_STRING_CALL(className, value) \
+	static_##className##_toString(value)
+
+
 MAGIC_STRING(Object);
 
 typedef struct _Object Object, * pObject;

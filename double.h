@@ -5,7 +5,7 @@
 #include "macro.h"
 #include "object.h"
 
-static char* DoublemagicString = "Double";
+MAGIC_STRING(Double);
 
 typedef struct _Double Double, * pDouble;
 
@@ -17,5 +17,7 @@ struct _Double {
 
 Double* new_Double(double value);
 CAST_FN_PROTO(Double);
+
+OBJECT_STATIC_TO_STRING_PROTO(Double, double);
 
 #endif //!DOUBLE_H
