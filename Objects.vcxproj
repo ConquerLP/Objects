@@ -128,16 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClCompile Include="objects\base\object.c" />
-    <ClCompile Include="objects\util\collections\abstractCollection.c" />
-    <ClCompile Include="objects\util\collections\array.c" />
+    <ClCompile Include="object.c" />
+    <ClCompile Include="abstractCollection.c" />
+    <ClCompile Include="array.c" />
+    <ClCompile Include="exception.c" />
+    <ClCompile Include="double.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="objects\base\object.h" />
-    <ClInclude Include="objects\macro.h" />
-    <ClInclude Include="objects\stdlib.h" />
-    <ClInclude Include="objects\util\collections\abstractCollection.h" />
-    <ClInclude Include="objects\util\collections\array.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="macro.h" />
+    <ClInclude Include="stdlib.h" />
+    <ClInclude Include="abstractCollection.h" />
+    <ClInclude Include="array.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="double.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
