@@ -2,8 +2,8 @@
 
 #define DOUBLE_H
 
-#include "macro.h"
-#include "object.h"
+#include "..\misc\macro.h"	
+#include "..\object.h"
 
 MAGIC_STRING(Double);
 

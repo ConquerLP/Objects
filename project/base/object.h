@@ -2,7 +2,7 @@
 
 #define OBJECT_H
 
-#include "macro.h"
+#include "misc/macro.h"
 
 #define MAGIC char* MAGIX
 #define MAGIX magicString

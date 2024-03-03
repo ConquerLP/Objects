@@ -2,7 +2,7 @@
 
 #define LIST_INTERFACE_H
 
-#include "macro.h"
+#include "..\..\base\misc\macro.h"
 
 typedef struct _ListInterface ListInterface, * pListInterface;
 

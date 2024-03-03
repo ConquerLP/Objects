@@ -2,7 +2,7 @@
 
 #define ARRAY_H
 
-#include "macro.h"
+#include "..\..\base\misc\macro.h"
 #include "abstractCollection.h"
 
 MAGIC_STRING(Array);

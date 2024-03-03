@@ -2,8 +2,8 @@
 
 #define ABSTRACTCOLLECTION
 
-#include "macro.h"
-#include "object.h"
+#include "..\..\base\misc\macro.h"
+#include "..\..\base\object.h"
 
 #define ABSTRACT_COLLECTION_INVALID_INDEX -1
 
