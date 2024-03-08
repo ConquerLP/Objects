@@ -16,4 +16,14 @@ struct _ListInterface {
 	bool (*containsAll)(void*, void*);
 };
 
+ListInterface* create_ListInterface(
+	bool (*add)(void*, void*),
+	bool (*addIndex)(void*, void*, _int),
+	bool (*addAll)(void*, void*),
+	bool (*addAllIndex)(void*, void* l, _int),
+	void (*clear)(void*),
+	bool (*contains)(void*, void*),
+	bool (*containsAll)(void*, void*)
+);
+
 #endif // !LIST_INTERFACE_H

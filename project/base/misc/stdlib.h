@@ -5,6 +5,7 @@
 #include "macro.h"
 #include "..\object.h"
 #include "..\..\util\collection\array.h"
+#include "..\..\util\collection\arrayList.h"
 #include "..\wrapper\double.h"
 
 
