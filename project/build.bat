@@ -2,38 +2,65 @@ del *.o
 del main.exe
 set "home=%CD%"
 
-cd base 
-cd misc 
+cd source\base\misc 
 gcc -std=c11 -c *.c
 move *.o "%home%"
 
 cd "%home%"
-cd base
-cd wrapper 
+cd source\base\wrapper
 gcc -std=c11 -c *.c
 move *.o "%home%"
 
 cd "%home%"
-cd base
+cd source\base
 gcc -std=c11 -c *.c
 move *.o "%home%"
 
 cd "%home%"
-cd util
-cd collection
+cd source\util\collection
 gcc -std=c11 -c *.c
 move *.o "%home%"
 
 cd "%home%"
-
+cd source
 gcc -std=c11 -c *.c
-pause
+move *.o "%home%"
+
+cd "%home%"
 gcc -std=c11 *.o -o main.exe
 del *.o
-cls
-@echo "Finish compilation."
 pause
 cls
+@echo "Compilation of project is finished."
+pause
+cls
+
+cd %home%
+cd test\test_api
+gcc -std=c11 -c *.c
+move *.o "%home%"
+
+cd %home%
+cd test\test_classes
+gcc -std=c11 -c *.c
+move *.o "%home%"
+
+cd %home%
+cd test
+gcc -std=c11 -c *.c
+move *.o "%home%"
+
+cd %home%
+gcc -std=c11 *.o -o test.exe
+pause
+del *.o
+cls
+@echo "Compilation of tests is finished."
+pause
+"test.exe"
+pause
+cls
+
 "main.exe"
-@echo "Done."
 pause
+del *.exe

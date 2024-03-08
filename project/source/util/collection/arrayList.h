@@ -2,7 +2,6 @@
 
 #define ARRAY_LIST_H
 
-#include "..\..\base\misc\macro.h"
 #include "listInterface.h"
 #include "abstractCollection.h"
 

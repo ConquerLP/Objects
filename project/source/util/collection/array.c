@@ -9,8 +9,7 @@ private _int indexOf(void* a, void* e);
 private _int lastIndexOf(void* a, void* e);
 private _int indexOfOffset(void* a, void* e, _int index);
 
-private bool try_index_check(va_list args);
-private void catch_index_check(va_list args);
+
 
 Array* new_Array(char* type, _int size)
 {
@@ -52,14 +51,14 @@ private _int indexOf(void* a, void* e)
 
 private _int lastIndexOf(void* a, void* e)
 {
-	_int index = indexOfOffset(a, e, 0);
-	_int found = ABSTRACT_COLLECTION_INVALID_INDEX;
-	while (index != ABSTRACT_COLLECTION_INVALID_INDEX) {
-		found = index;
-		index = indexOfOffset(a, e, index + 1);
-		if (index == ABSTRACT_COLLECTION_INVALID_INDEX) return found;
+	check_type(a, e);
+	Array* array = a;
+	Object* o = null;
+	for (_int i = array->absCol->size - 1; i >= 0; i--) {
+		o = CAST(Object, array->e[i]);
+		if (o->equals(array->e[i], e)) return i;
 	}
-	return index;
+	return ABSTRACT_COLLECTION_INVALID_INDEX;
 }
 
 private _int indexOfOffset(void* a, void* e, _int index)
@@ -72,21 +71,4 @@ private _int indexOfOffset(void* a, void* e, _int index)
 		if (o->equals(array->e[i], e)) return i;
 	}
 	return ABSTRACT_COLLECTION_INVALID_INDEX;
-}
-
-private bool try_index_check(va_list args)
-{
-	Array* a = va_arg(args, void*);
-	_int index = va_arg(args, _int);
-	if (index >= a->absCol->size || index < 0) return false;
-	else return true;
-}
-
-private void catch_index_check(va_list args)
-{
-	Array* a = va_arg(args, void*);
-	_int index = va_arg(args, _int);
-	if (index != ABSTRACT_COLLECTION_INVALID_INDEX) {
-		ERROR__("Array index out of bounds.");
-	}
 }

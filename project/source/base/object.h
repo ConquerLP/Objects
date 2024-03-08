@@ -42,7 +42,6 @@
 #define OBJECT_STATIC_STRING_CALL(className, value) \
 	static_##className##_toString(value)
 
-
 MAGIC_STRING(Object);
 
 typedef struct _Object Object, * pObject;

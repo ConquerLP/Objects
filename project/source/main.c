@@ -7,7 +7,7 @@ int main(void) {
 	a->absCol->set(a, b, 0);
 	a->absCol->set(a, b, 1);
 
-	a->absCol->lastIndexOf(a, b);
+	printf("%zu", a->absCol->lastIndexOf(a, b));
 
 	return 0;
 }
