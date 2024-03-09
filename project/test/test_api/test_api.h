@@ -12,28 +12,44 @@
 
 #define BOOL_TO_STRING(expression) (expression) ? "passed" : "not passed"
 
-static FILE* output_stream = null;
+#define FN_PROTO_PRIMITIVE(ftype, type) \
+	void assert_eq_##ftype(type expected, type value); \
+	void assert_neq_##ftype(type expected, type value); 
 
-#define FN_PROTO_PRIMITIVE(type) \
-	void assert_eq_##type(type expected, type value); \
-	void assert_neq_##type(type expected, type value); 
+#define FN_PRIMITIVE(ftype, type, specifier) \
+	void assert_eq_##ftype(type ex, type val) { \
+	fprintf(stdout, "%-*s: %*"#specifier" | %*"#specifier" | %s\n", \
+	TEST_FUNCNAME_MAX, __func__, \
+	TEST_EXPECTED_MAX, ex, \
+	TEST_VALUE_MAX, val, \
+	BOOL_TO_STRING(ex == val)); } \
+	void assert_neq_##ftype(type ex, type val) { \
+	fprintf(stdout, "%-*s: %*"#specifier" | %*"#specifier" | %s\n", \
+	TEST_FUNCNAME_MAX, __func__, \
+	TEST_EXPECTED_MAX, ex, \
+	TEST_VALUE_MAX, val, \
+	BOOL_TO_STRING(ex != val)); }
 /*
 	FILE:
 				| ex | val | result
 	test_name: 
 */
 
+FN_PROTO_PRIMITIVE(float, float)
+FN_PROTO_PRIMITIVE(double, double)
+FN_PROTO_PRIMITIVE(longdouble, long double)
 
-void assert_eq_float(double ex, double val)
-{
-	fprintf(stdout, "%-*s: %*lf | %*lf | %s\n", 
-		TEST_FUNCNAME_MAX,  __func__,
-		TEST_EXPECTED_MAX, ex,
-		TEST_VALUE_MAX, val,
-		BOOL_TO_STRING(ex == val));
+FN_PROTO_PRIMITIVE(short, short)
+FN_PROTO_PRIMITIVE(unsignedshort, unsigned short)
+FN_PROTO_PRIMITIVE(int, int)
+FN_PROTO_PRIMITIVE(unsignedint, unsigned int)
+FN_PROTO_PRIMITIVE(longint, long int)
+FN_PROTO_PRIMITIVE(unsignedlongint, unsigned long int)
+FN_PROTO_PRIMITIVE(longlongint, long long int)
+FN_PROTO_PRIMITIVE(unsignedlonglongint, unsigned long long int)
 
-}
-
+FN_PROTO_PRIMITIVE(char, char)
+FN_PROTO_PRIMITIVE(unsignedchar, unsigned char)
 
 
 
